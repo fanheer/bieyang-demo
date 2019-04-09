@@ -1,0 +1,16 @@
+.products{}
+.items{
+  display: flex;
+  padding: 20px;
+}
+.pic{
+  width: 36%;
+  height: 150px;
+  border: 1px solid;
+}
+.intro{
+  display: block;
+  width: 64%;
+  height: 150px;
+  border: 1px solid;
+}

@@ -1,18 +1,17 @@
 import styles from './index.css';
 import { Layout } from 'antd';
-
 const {
-  Header, Footer, Content,
+  Header, Content,
 } = Layout;
+
 function BasicLayout(props) {
   return (
     <div>
       <Layout>
         <Header className={styles.banner}></Header>
         <Content>{props.children}</Content>
-        <Footer>Footer </Footer>
+        {/*<Footer>Footer </Footer>*/}
       </Layout>
-      {/*<header className={styles.banner}>补货清单</header>*/}
     </div>
   );
 }
