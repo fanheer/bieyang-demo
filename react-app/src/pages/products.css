@@ -1,16 +1,79 @@
 .products{}
+/*商品展示-某件商品*/
 .items{
   display: flex;
-  padding: 20px;
+  padding: 30px 20px;
+  border-bottom: 1px solid #d7d7d7;
 }
+/*商品图片区域*/
 .pic{
   width: 36%;
-  height: 150px;
-  border: 1px solid;
+  height: 120px;
+  /*padding: 15px;*/
+  /*border: 1px solid;*/
 }
+/*商品图片样式*/
+.imgspan{
+  float: right;
+  width: 29%;
+  max-width: 150px;
+  position: absolute;
+  right: 66%;
+}
+/*商品详情介绍区域*/
 .intro{
   display: block;
   width: 64%;
-  height: 150px;
-  border: 1px solid;
+  height: 120px;
+  /*border: 1px solid;*/
+  /*padding: 15px;*/
+}
+/*商品标题部分*/
+.titlearea{
+  width: 100%;
+  font-size: 14px;
+}
+/*商品颜色块部分*/
+.colorsarea{
+  display: flex;
+  width: 100%;
+}
+.colorspan{
+  margin: 2px;
+  float: left;
+  width: 20px;
+  height: 20px;
+}
+/*商品sku部分*/
+.skuarea{
+  width: 97%;
+  margin: 0 5px 0 0;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+}
+.skuspan{
+  margin: 3px 0;
+  background-color: #ebebeb;
+  color: #afafaf;
+}
+/*商品价格部分*/
+.pricesarea{
+  width: 100%;
+  display:block;
+  margin: 4px 0 0 0;
+}
+.originalPricespan{
+  color: #bbbbbb;
+  text-decoration:line-through;
+  font-weight: bold;
+}
+.discountPricespan{
+  font-weight: bold;
+}
+/*补货sku Button*/
+.addbtn{
+  /*display: flex;*/
+  float: right;
 }
