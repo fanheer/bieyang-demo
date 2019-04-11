@@ -8,9 +8,6 @@
 /*商品图片区域*/
 .pic{
   width: 36%;
-  height: 120px;
-  /*padding: 15px;*/
-  /*border: 1px solid;*/
 }
 /*商品图片样式*/
 .imgspan{
@@ -24,9 +21,7 @@
 .intro{
   display: block;
   width: 64%;
-  height: 120px;
-  /*border: 1px solid;*/
-  /*padding: 15px;*/
+  height: 130px;
 }
 /*商品标题部分*/
 .titlearea{
@@ -35,7 +30,7 @@
 }
 /*商品颜色块部分*/
 .colorsarea{
-  margin: 5px 0 0 0;
+  margin: 3px 0 0 0;
   display: flex;
   width: 100%;
 }
@@ -48,7 +43,7 @@
 /*商品sku部分*/
 .skuarea{
   width: 97%;
-  margin: 5px 5px 0 0;
+  margin: 3px 5px 0 0;
   display: block;
   overflow: hidden;
   white-space: nowrap;
@@ -66,7 +61,7 @@
 .pricesarea{
   width: 100%;
   display:block;
-  margin: 5px 0 0 0;
+  margin: 3px 0 0 0;
 }
 .originalPricespan{
   color: #bbbbbb;

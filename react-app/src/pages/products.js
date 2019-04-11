@@ -9,7 +9,7 @@ class products extends Component {
     //商品列表项
     items: [
       {
-        updateTime: '2019-01-01 20:02:00',
+        updateTime: '2018-03-01 20:02:00',
         picUrl: require('../../src/assets/clarins.png'),
         brandName: 'CLARINS',
         tradeName: '娇韵诗双萃精华娇韵诗双萃精华娇韵诗双萃精华',
@@ -35,7 +35,7 @@ class products extends Component {
             store: 20
           },
         ],
-        color: ['#bfbfbf','#f7aebb','#F12345']
+        color: ['#46bf6b','#427bf7','#a3a3a6']
       }
     ]
   }
@@ -79,7 +79,7 @@ class products extends Component {
             store: 20
           },
         ],
-        color: ['#bfbfbf','#f7aebb','#F12345']
+        color: ['#9ab5bf','#7cb8f7','#958df1']
       },
       {
         updateTime: '2019-03-01 20:02:00',
@@ -114,7 +114,7 @@ class products extends Component {
             store: 20
           },
         ],
-        color: ['#bfbfbf','#f7aebb','#F12345']
+        color: ['#bfbfbf','#946870','#5f101c']
       },
       {
         updateTime: '2019-01-02 21:02:00',
@@ -190,7 +190,7 @@ class products extends Component {
             store: 20
           },
         ],
-        color: ['#bfbfbf','#f7aebb','#F12345']
+        color: ['#bfbfbf','#b1d5f7','#c9f1d1']
       }
     ]
     return value
@@ -214,6 +214,7 @@ class products extends Component {
   }
   //补货btn
   addProduct = (e) => {
+    alert('oh!you clicked me??')
     console.log('click ', e);
   }
   render() {
