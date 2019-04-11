@@ -6,7 +6,7 @@ class products extends Component {
   state = {
     //菜单导航项
     current: 'item1',
-    //商品属性
+    //商品列表项
     items: [
       {
         updateTime: '2019-01-01 20:02:00',
@@ -41,170 +41,169 @@ class products extends Component {
   }
   componentDidMount() {
     this.timerID = setInterval(
-      () => this.initProducts(),
-      1000
+      () => this.setState({
+        items: this.sortByUpdateTime(this.initProducts())
+      }), 3000
     );
-    console.log(this.state.items)
   }
   componentWillUnmount() {
     clearInterval(this.timerID);
   }
   //商品数据模拟
   initProducts() {
-    this.setState({
-      items: [
-        {
-          updateTime: '2019-01-01 20:02:00',
-          picUrl: require('../../src/assets/clarins.png'),
-          brandName: 'CLARINS',
-          tradeName: '娇韵诗双萃精华娇韵诗双萃精华娇韵诗双萃精华',
-          originalPrice: 123,
-          discountPrice: 100,
-          sku: [
-            {
-              colorText: 'black',
-              width: 'M',
-              size: 'UK3',
-              store: 5
-            },
-            {
-              colorText: 'green',
-              width: 'M',
-              size: 'UK5',
-              store: 0
-            },
-            {
-              colorText: 'green',
-              width: 'M',
-              size: 'UK5',
-              store: 20
-            },
-          ],
-          color: ['#bfbfbf','#f7aebb','#F12345']
-        },
-        {
-          updateTime: '2019-03-01 20:02:00',
-          picUrl: require('../../src/assets/clarins.png'),
-          brandName: 'CLARINS',
-          tradeName: '娇韵诗双萃精华娇韵诗双萃精华娇韵诗双萃精华',
-          originalPrice: 123,
-          discountPrice: 100,
-          sku: [
-            {
-              colorText: 'black',
-              width: 'M',
-              size: 'UK3',
-              store: 0
-            },
-            {
-              colorText: 'black',
-              width: 'M',
-              size: 'UK3',
-              store: 5
-            },
-            {
-              colorText: 'green',
-              width: 'M',
-              size: 'UK5',
-              store: 0
-            },
-            {
-              colorText: 'green',
-              width: 'M',
-              size: 'UK5',
-              store: 20
-            },
-          ],
-          color: ['#bfbfbf','#f7aebb','#F12345']
-        },
-        {
-          updateTime: '2019-01-02 21:02:00',
-          picUrl: require('../../src/assets/clarins.png'),
-          brandName: 'CLARINS',
-          tradeName: '娇韵诗双萃精华娇韵诗双萃精华娇韵诗双萃精华',
-          originalPrice: 123,
-          discountPrice: 100,
-          sku: [
-            {
-              colorText: 'black',
-              width: 'M',
-              size: 'UK3',
-              store: 0
-            },
-            {
-              colorText: 'green',
-              width: 'M',
-              size: 'UK5',
-              store: 0
-            }
-          ],
-          color: ['#bfbfbf','#f7aebb','#F12345']
-        },
-        {
-          updateTime: '2016-01-01 20:02:00',
-          picUrl: require('../../src/assets/clarins.png'),
-          brandName: 'CLARINS',
-          tradeName: '娇韵诗双萃精华娇韵诗双萃精华娇韵诗双萃精华',
-          originalPrice: 123,
-          discountPrice: 100,
-          sku: [
-            {
-              colorText: 'black',
-              width: 'M',
-              size: 'UK3',
-              store: 0
-            },
-            {
-              colorText: 'green',
-              width: 'M',
-              size: 'UK5',
-              store: 20
-            },
-            {
-              colorText: 'green',
-              width: 'M',
-              size: 'UK5',
-              store: 20
-            },
-          ],
-          color: ['#bfbfbf','#f7aebb','#F12345']
-        },
-        {
-          updateTime: '2018-11-01 20:02:00',
-          picUrl: require('../../src/assets/clarins.png'),
-          brandName: 'CLARINS',
-          tradeName: '娇韵诗双萃精华娇韵诗双萃精华娇韵诗双萃精华',
-          originalPrice: 123,
-          discountPrice: 100,
-          sku: [
-            {
-              colorText: 'black',
-              width: 'M',
-              size: 'UK3',
-              store: 5
-            },
+    let value=  [
+      {
+        updateTime: '2019-01-01 20:02:00',
+        picUrl: require('../../src/assets/clarins.png'),
+        brandName: 'CLARINS',
+        tradeName: '娇韵诗双萃精华娇韵诗双萃精华娇韵诗双萃精华',
+        originalPrice: 123,
+        discountPrice: 100,
+        sku: [
+          {
+            colorText: 'black',
+            width: 'M',
+            size: 'UK3',
+            store: 5
+          },
+          {
+            colorText: 'green',
+            width: 'M',
+            size: 'UK5',
+            store: 0
+          },
+          {
+            colorText: 'green',
+            width: 'M',
+            size: 'UK5',
+            store: 20
+          },
+        ],
+        color: ['#bfbfbf','#f7aebb','#F12345']
+      },
+      {
+        updateTime: '2019-03-01 20:02:00',
+        picUrl: require('../../src/assets/clarins.png'),
+        brandName: 'CLARINS',
+        tradeName: '娇韵诗双萃精华娇韵诗双萃精华娇韵诗双萃精华',
+        originalPrice: 123,
+        discountPrice: 100,
+        sku: [
+          {
+            colorText: 'black',
+            width: 'M',
+            size: 'UK3',
+            store: 0
+          },
+          {
+            colorText: 'black',
+            width: 'M',
+            size: 'UK3',
+            store: 5
+          },
+          {
+            colorText: 'green',
+            width: 'M',
+            size: 'UK5',
+            store: 0
+          },
+          {
+            colorText: 'green',
+            width: 'M',
+            size: 'UK5',
+            store: 20
+          },
+        ],
+        color: ['#bfbfbf','#f7aebb','#F12345']
+      },
+      {
+        updateTime: '2019-01-02 21:02:00',
+        picUrl: require('../../src/assets/clarins.png'),
+        brandName: 'CLARINS',
+        tradeName: '娇韵诗双萃精华娇韵诗双萃精华娇韵诗双萃精华',
+        originalPrice: 123,
+        discountPrice: 100,
+        sku: [
+          {
+            colorText: 'black',
+            width: 'M',
+            size: 'UK3',
+            store: 0
+          },
+          {
+            colorText: 'green',
+            width: 'M',
+            size: 'UK5',
+            store: 0
+          }
+        ],
+        color: ['#bfbfbf','#f7aebb','#F12345']
+      },
+      {
+        updateTime: '2016-01-01 20:02:00',
+        picUrl: require('../../src/assets/clarins.png'),
+        brandName: 'CLARINS',
+        tradeName: '娇韵诗双萃精华娇韵诗双萃精华娇韵诗双萃精华',
+        originalPrice: 123,
+        discountPrice: 100,
+        sku: [
+          {
+            colorText: 'black',
+            width: 'M',
+            size: 'UK3',
+            store: 0
+          },
+          {
+            colorText: 'green',
+            width: 'M',
+            size: 'UK5',
+            store: 20
+          },
+          {
+            colorText: 'green',
+            width: 'M',
+            size: 'UK5',
+            store: 20
+          },
+        ],
+        color: ['#bfbfbf','#f7aebb','#F12345']
+      },
+      {
+        updateTime: '2018-11-01 20:02:00',
+        picUrl: require('../../src/assets/clarins.png'),
+        brandName: 'CLARINS',
+        tradeName: '娇韵诗双萃精华娇韵诗双萃精华娇韵诗双萃精华',
+        originalPrice: 123,
+        discountPrice: 100,
+        sku: [
+          {
+            colorText: 'black',
+            width: 'M',
+            size: 'UK3',
+            store: 5
+          },
 
-            {
-              colorText: 'green',
-              width: 'M',
-              size: 'UK5',
-              store: 20
-            },
-          ],
-          color: ['#bfbfbf','#f7aebb','#F12345']
-        }
-      ]
-    });
-    this.sortByUpdateTime();
+          {
+            colorText: 'green',
+            width: 'M',
+            size: 'UK5',
+            store: 20
+          },
+        ],
+        color: ['#bfbfbf','#f7aebb','#F12345']
+      }
+    ]
+    return value
   }
-  //商品排序
-  sortByUpdateTime(){
-    this.state.items.sort(function (a,b) {
-      return Date.parse(a.time)-Date.parse(b.time)
+  //排序
+  sortByUpdateTime(value){
+    value.sort(function (a,b) {
+      return Date.parse(a.updateTime)<Date.parse(b.updateTime)?1:-1
     });
-    for(var i=0;i<this.state.items.length;i++){
-      console.log(this.state.items[i].updateTime)
-    }
+    // for(var i=0;i<value.length;i++){
+    //   console.log(value[i].updateTime)
+    // }
+    return value;
   }
   //菜单项btn
   handleClick = (e) => {
@@ -238,6 +237,7 @@ class products extends Component {
             <div className={styles.intro}>
               <div className={styles.titlearea}>
                 {item.brandName}{item.tradeName}
+                {item.updateTime}
               </div>
               <div className={styles.colorsarea}>
                 {item.color.map((it,id)=>
@@ -246,7 +246,7 @@ class products extends Component {
               </div>
               <span className={styles.skuarea}>补货：
                 {item.sku.map((sit,sid)=>
-                    <span className={sit.store<=0?styles.skuspan:null} key={sid}>{sit.colorText}-{sit.width}-{sit.size}</span>
+                    <span className={sit.store<=0?styles.noneskuspan:styles.skuspan} key={sid}>{sit.colorText}-{sit.width}-{sit.size}</span>
                 )}
               </span>
               <div className={styles.pricesarea}>
